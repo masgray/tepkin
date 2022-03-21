@@ -1,4 +1,3 @@
-console.log(config);
 const testsTitles = config.testsTitles;
 const answers = config.answers;
 const trueAnswers = config.trueAnswers;
@@ -12,13 +11,7 @@ let testIndex = -1;
 let podskazkaVisible = false;
 
 const zagalovok = document.getElementById("zadacha");
-const answerButtons = [
-    document.getElementById('btn1'),
-    document.getElementById('btn2'),
-    document.getElementById('btn3'),
-    document.getElementById('btn4'),
-    document.getElementById('btn5')
-];
+const answerButtons = [];
 const buttonNext = document.getElementById('btn10');
 const text2 = document.getElementById("otvet");
 
@@ -52,20 +45,21 @@ function nextTest() {
 }
 
 for (let i = 0; i < answersCount; ++i) {
-    answerButtons[i].addEventListener('click', () => {
+    const btn = document.getElementById('btn' + (i + 1));
+    answerButtons.push(btn);
+    btn.addEventListener('click', () => {
         if (i === trueAnswers[testIndex]) {
             answerButtons[i].style.backgroundColor = '#0F0';
             text2.textContent = "Верно!";
             correctResults.push(testIndex);
             buttonNext.disabled = false;
         } else {
+            answerButtons[i].style.backgroundColor = '#F00';
             if (podskazkaVisible) {
-                answerButtons[i].style.backgroundColor = '#F00';
                 text2.textContent = "Не верно!";
                 incorrectResults.push(testIndex);
                 buttonNext.disabled = false;
             } else {
-                answerButtons[i].style.backgroundColor = '#F00';
                 text2.textContent = podskazka[testIndex];
                 podskazkaVisible = true;
             }
