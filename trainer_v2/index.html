@@ -4,10 +4,14 @@
     <meta charset="utf-8">
     <title>Тренажёр по теме Электростатика</title>
     <style>
+        * {
+            font-family: Arial;
+            font-size: xx-large;
+        }
+
         .title {
             background-color: white;
             color: #000;
-            font-family: Arial;
         }
 
         .btn {
@@ -15,9 +19,7 @@
             color: #000;
             background-color: #D1D1D1;
             padding: 14px 28px;
-            font-size: 16px;
             cursor: pointer;
-            font-family: Arial;
         }
 
         .btn:disabled {
@@ -25,21 +27,22 @@
             color: #555;
             background-color: #E1E1E1;
             padding: 14px 28px;
-            font-size: 16px;
             cursor: default;
-            font-family: Arial;
         }
     </style>
 </head>
 <body>
-<p id="zadacha" class="title">Текст задачи.</p>
-<button id="btn1" class="btn"></button>
-<button id="btn2" class="btn"></button>
-<button id="btn3" class="btn"></button>
-<button id="btn4" class="btn"></button>
-<button id="btn5" class="btn"></button>
-<p id="otvet" style="width: 100%; text-align: center;"></p>
-<button id="btn10" class="btn">Далее</button>
+<div id="task">
+    <p id="zadacha" class="title">Текст задачи.</p>
+    <button id="btn1" class="btn"></button>
+    <button id="btn2" class="btn"></button>
+    <button id="btn3" class="btn"></button>
+    <button id="btn4" class="btn"></button>
+    <button id="btn5" class="btn"></button>
+    <p id="otvet"></p>
+    <button id="btn10" class="btn">Далее</button>
+</div>
+<div id="result"></div>
 <script src="data.js"></script>
 <script src="index.js"></script>
 </body>
